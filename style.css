@@ -88,6 +88,7 @@ a {
   text-align: center;
 }
 
+
 .h2_high {
   font-size: 50px;
   font-family: Gilroy_Bold;
@@ -403,11 +404,15 @@ section>h3 {
   margin-top: 10rem;
 }
 
-section>h1,
-section>h3 {
+section>h1 {
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 1rem;
+}
+
+section>h3 {
+  width: 100%;
+  text-align: center;
 }
 
 section>p {
