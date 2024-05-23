@@ -2,10 +2,12 @@
   font-family: Gilroy;
   src: url(Font/Gilroy-FREE/Gilroy-FREE/Gilroy-Light.otf);
 }
+
 @font-face {
   font-family: Gilroy_Bold;
   src: url(Font/Gilroy-FREE/Gilroy-FREE/Gilroy-ExtraBold.otf);
 }
+
 #myVideo {
   position: fixed;
   right: 0;
@@ -13,6 +15,7 @@
   min-width: 90%;
   min-height: 100%;
 }
+
 * :not(li) {
   margin: 0;
   box-sizing: border-box;
@@ -22,45 +25,49 @@
   scrollbar-width: thin;
   z-index: 10;
 }
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   user-select: none;
 }
-h2 {
-  vertical-align: center;
-  text-align: center;
-  padding: 3rem;
-}
+
 a {
   text-decoration: none;
   color: whitesmoke;
   cursor: pointer;
 }
-.left_about > h1 > span {
+
+.left_about>h2>span {
   font-size: 5vw;
+  font-family: Gilroy_Bold;
 }
+
 #about {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
+
 .left_about {
   display: flex;
   flex-wrap: wrap;
   flex-basis: 48%;
   flex-direction: column;
 }
+
 .left_about p {
   font-size: 20px;
 }
+
 #beach {
   margin-top: 3rem;
   margin-left: 1rem;
   width: 48%;
   border-radius: 20px;
 }
+
 #h1 {
   transform: translateY(-600px);
   animation: slideInY 1.2s 1s ease-in-out forwards;
@@ -70,6 +77,7 @@ a {
   margin-left: 5vw;
   font-size: 90px;
 }
+
 #h3 {
   font-size: 50px;
   margin-top: 30vh;
@@ -79,17 +87,31 @@ a {
   min-width: 100vw;
   text-align: center;
 }
+
+.h2_high {
+  font-size: 50px;
+  font-family: Gilroy_Bold;
+}
+
+.h2_low {
+  font-size: 60px;
+  margin-bottom: 5rem;
+  font-family: Gilroy_Bold;
+}
+
 @keyframes slideInY {
   100% {
     transform: translateY(50px);
     opacity: 1;
   }
 }
+
 @keyframes slide-left {
   100% {
     margin-left: 0%;
   }
 }
+
 header {
   display: flex;
   position: fixed;
@@ -98,17 +120,19 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: #000000;
   color: #fff;
   padding: 1em;
   width: 100%;
   z-index: 11;
 }
+
 .lowBorder {
-  border-bottom: 1px solid #1f1f1f;
+  border-bottom: 3px solid #1f1f1f;
   box-shadow: 0 0 20px #1f1f1f;
   z-index: 11;
 }
+
 .image {
   width: 5%;
   height: 5%;
@@ -118,6 +142,7 @@ header {
   max-width: 70px;
   max-height: 70px;
 }
+
 .menu {
   display: flex;
   flex-direction: row;
@@ -128,13 +153,15 @@ header {
   justify-content: space-around;
   margin-right: 60px;
 }
-.menu > li {
+
+.menu>li {
   position: relative;
   overflow: hidden;
   cursor: pointer;
   font-size: 1vw;
 }
-.menu > li::before {
+
+.menu>li::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -144,9 +171,11 @@ header {
   background-color: #ffffff;
   transition: width 0.3s ease;
 }
-.menu > li:hover::before {
+
+.menu>li:hover::before {
   width: 100%;
 }
+
 .menu-button-container {
   display: none;
   height: 100%;
@@ -156,9 +185,11 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 #menu-toggle {
   display: none;
 }
+
 .menu-button,
 .menu-button::before,
 .menu-button::after {
@@ -170,31 +201,38 @@ header {
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
 }
+
 .menu-button::before {
   content: "";
   margin-top: -8px;
 }
+
 .menu-button::after {
   content: "";
   margin-top: 8px;
 }
-#menu-toggle:checked + .menu-button-container .menu-button::before {
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
   margin-top: 0;
   transform: rotate(405deg);
 }
-#menu-toggle:checked + .menu-button-container .menu-button {
+
+#menu-toggle:checked+.menu-button-container .menu-button {
   background: rgb(255, 255, 255, 0);
 }
-#menu-toggle:checked + .menu-button-container .menu-button::after {
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
   margin-top: 0;
   transform: rotate(-405deg);
 }
+
 @media (max-width: 425px) {
   .menu-button-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .menu {
     position: absolute;
     margin-top: 220px;
@@ -204,37 +242,52 @@ header {
     align-items: center;
     background-color: rgb(0, 0, 0);
   }
-  #menu-toggle ~ .menu li {
+
+  #menu-toggle~.menu li {
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  #menu-toggle:checked ~ .menu li {
+
+  #menu-toggle:checked~.menu li {
     margin-right: 2rem;
     border: #333 solid 1px;
     height: 10em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  .menu > li {
+
+  .menu>li {
     display: flex;
     justify-content: center;
     margin: 0;
     width: 100%;
     color: whitesmoke;
   }
-  .menu > li:not(:last-child) {
+
+  .menu>li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
 }
+
 @media (max-width: 768px) {
   .menu-button-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .h2_high {
+    margin-left: 1rem;
+  }
+
+  .h2_low {
+    font-size: 50px;
+  }
+
+
   .menu {
     position: absolute;
     margin-top: 250px;
@@ -244,99 +297,123 @@ header {
     align-items: center;
     background-color: rgb(0, 0, 0);
   }
+
   #h3 {
     font-size: 20px;
   }
+
   #h1 {
     font-size: 40px;
   }
+
   a {
     font-size: 20px;
   }
+
   .info {
     width: 100%;
     margin-top: 3rem;
   }
+
   .cards {
     width: 100%;
   }
-  #menu-toggle ~ .menu li {
+
+  #menu-toggle~.menu li {
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  #menu-toggle:checked ~ .menu li {
+
+  #menu-toggle:checked~.menu li {
     margin-right: 2rem;
     border: #333 solid 1px;
     height: 5em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  .menu > li {
+
+  .menu>li {
     display: flex;
     justify-content: center;
     margin: 0;
     width: 100%;
     color: whitesmoke;
   }
-  .menu > li:not(:last-child) {
+
+  .menu>li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
+
   #beach {
     display: none;
   }
+
   .left_about {
     flex-basis: 100%;
   }
+
   #form_section {
     justify-content: center;
   }
+
   .social_div {
     flex-basis: 70%;
   }
+
   .lower_footer {
     flex-direction: column;
   }
+
   .ul_footer {
     flex-direction: column;
     align-items: center;
   }
+
   .left_low,
   .right_low {
     flex-direction: column;
     align-items: center;
   }
 }
+
 @media (max-width: 1024px) {
   .left_about {
     flex-basis: 100%;
   }
+
   #beach {
     display: none;
   }
 }
+
 section {
   display: flex;
   flex-wrap: wrap;
   padding: 3rem 3rem 15rem 3rem;
 }
-section > h1 {
+
+section>h1 {
   font-size: 4vw;
 }
-section > h3 {
+
+section>h3 {
   margin-top: 10rem;
 }
-section > h1,
-section > h3 {
+
+section>h1,
+section>h3 {
   width: 100%;
   padding-top: 2rem;
   padding-bottom: 1rem;
 }
-section > p {
+
+section>p {
   padding-top: 1rem;
 }
+
 #form_section {
   display: flex;
   flex-wrap: wrap;
@@ -345,29 +422,36 @@ section > p {
   height: auto;
   justify-content: center;
 }
-#form_section > span {
+
+#form_section>h2>span {
   padding-bottom: 1rem;
+  font-size: 500px;
+  font-family: Gilroy_Bold;
 }
+
 .socials_img {
   display: flex;
   gap: 0.5rem;
   padding: 1rem 0 3rem 0;
 }
+
 .social_div {
   flex-basis: 60%;
   flex-direction: column;
   justify-content: center;
 }
-.social_div > h1 > span {
+
+.social_div>h1>span {
   padding-bottom: 3rem;
   font-size: 30px;
 }
+
 .form {
   flex-basis: 40%;
   flex-direction: column;
-  background-color: black;
   min-width: 200px;
 }
+
 input {
   width: 100%;
   background-color: #1f1f1f;
@@ -377,6 +461,7 @@ input {
   padding: 1rem;
   min-height: 1px;
 }
+
 #submit {
   display: flex;
   justify-content: center;
@@ -384,15 +469,18 @@ input {
   cursor: pointer;
   height: 6vh;
 }
+
 input:focus {
   background-color: whitesmoke;
   color: black;
 }
+
 input,
 textarea:hover {
   transition: 2s;
   border: #333 solid 1px;
 }
+
 textarea {
   border-radius: 20px;
   width: 100%;
@@ -400,10 +488,12 @@ textarea {
   border: none;
   padding: 1rem;
 }
+
 textarea:focus {
   background-color: whitesmoke;
   color: black;
 }
+
 main {
   font-family: Gilroy;
   display: flex;
@@ -412,10 +502,10 @@ main {
   width: 100%;
   margin: 5rem 0 5rem 0;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
-  background-color: black;
   height: auto;
   border-radius: 20px;
   width: 90%;
@@ -424,9 +514,12 @@ main {
   margin-left: auto;
   max-width: 5000px;
 }
-.cards > h2 {
+
+.cards>h2 {
   width: 100%;
+  text-align: center;
 }
+
 .card_image {
   width: 100%;
   height: 70%;
@@ -436,46 +529,56 @@ main {
   max-height: 500px;
   max-width: 600px;
 }
+
 .card_inside {
   flex-basis: 33%;
   padding: 1rem;
   margin-bottom: 8vh;
   justify-content: center;
 }
+
 .card_inside span {
   font-size: 25px;
 }
+
 .card_inside p {
   font-size: 20px;
 }
+
 p {
   color: whitesmoke;
 }
-p > span {
+
+p>span {
   border-bottom: 1px solid #ffffff;
 }
-h1 > span,
+
+h1>span,
 main h1 {
   font-family: Gilroy_Bold;
   margin-top: 5rem;
 }
+
 main h1 {
   font-size: 6vw;
 }
-main > h4 {
+
+main>h4 {
   font-family: Gilroy_Bold;
 }
-.racers > span,
-.flappy > span {
+
+.racers>span,
+.flappy>span {
   font-size: 3vw;
 }
-main > h2 {
+
+main>h2 {
   margin: 8rem 40rem 3rem 0;
 }
+
 footer {
   display: flex;
   flex-wrap: wrap;
-  background-color: black;
   height: 500px;
   color: whitesmoke;
   padding: 3rem;
@@ -484,19 +587,22 @@ footer {
   justify-content: space-between;
   margin-bottom: 3rem;
 }
+
 .footer_high {
   margin-bottom: 20px;
-  background-color: black;
   flex-basis: 100%;
 }
+
 .footer_high h3 {
   margin: 0 0 10px 0;
 }
+
 .footer_high img {
   height: auto;
   max-width: 100px;
   margin: 0 auto;
 }
+
 .lower_footer {
   display: flex;
   flex-direction: row;
@@ -504,9 +610,9 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   padding-top: 20px;
-  background-color: black;
   flex-basis: 100%;
 }
+
 .line,
 .footer_high {
   display: flex;
@@ -516,11 +622,12 @@ footer {
   flex-wrap: wrap;
   border-top: 1px solid whitesmoke;
   padding-top: 20px;
-  background-color: black;
 }
+
 .left_low p {
   margin: 0 15px;
 }
+
 .ul_footer {
   list-style: none;
   padding: 0;
@@ -529,32 +636,39 @@ footer {
   flex-direction: column;
   text-align: center;
 }
+
 .ul_footer a {
   color: whitesmoke;
   text-decoration: none;
   padding: 0 10px;
   transition: color 0.3s ease-in-out;
 }
+
 .ul_footer li a:hover {
   color: #6b6b6b;
 }
+
 .left_f {
   flex-direction: column;
 }
+
 .info {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
+
 #bam,
 #bom,
 #bomba {
   margin-bottom: 6vh;
 }
+
 .text {
   font-size: 2vw;
   padding-top: 1rem;
 }
-.little_about > h1 > span {
+
+.little_about>h1>span {
   font-size: 50vw;
 }
